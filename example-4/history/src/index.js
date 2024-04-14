@@ -100,7 +100,7 @@ async function main() {
     app.get("/history", async (req, res) => {
         const skip = parseInt(req.query.skip);
         const limit = parseInt(req.query.limit);
-        const history = await videosCollection.find()
+        const history = await historyCollection.find()
             .skip(skip)
             .limit(limit)
             .toArray();
